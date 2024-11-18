@@ -9,7 +9,6 @@
     android:background="@drawable/pagetwo"
     tools:context=".MainActivity2">
 
-
     <TextView
         android:id="@+id/date_text2"
         android:layout_width="wrap_content"
