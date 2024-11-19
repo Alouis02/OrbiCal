@@ -2,9 +2,6 @@ package com.tmsimple.orbical;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -56,10 +53,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
     //Code for the day marker rotation
-        RotateAnimation anim = new RotateAnimation(0.0f, 360.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         Calendar days = Calendar.getInstance();
         int dayOfYear = days.get(Calendar.DAY_OF_YEAR);
-        int yearNum = Calendar.YEAR;
         boolean isLeapYear = Year.now().isLeap();
 
         //January 1st 12:00 AM
