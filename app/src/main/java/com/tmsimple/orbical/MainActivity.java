@@ -39,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.friday);
         imageView = findViewById(R.id.saturday);
         imageView = findViewById(R.id.sunday);
+
+        imageView = findViewById(R.id.year);
+        imageView = findViewById(R.id.leapyear);
+
         Calendar cal = Calendar.getInstance();
 
         if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
@@ -57,16 +61,21 @@ public class MainActivity extends AppCompatActivity {
             imageView.setImageResource(R.drawable.sunday);
         }
 
-        open = findViewById(R.id.button1);
-        open.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                startActivity(intent);
-            }
-        });
+        if (cal.get(Calendar.YEAR) == Calendar.YEAR) {
+            imageView.setImageResource(R.drawable.year);
+        }
+        else if (cal.get(Calendar.YEAR) == Calendar.YEAR) {
+            imageView.setImageResource(R.drawable.leapyear);
+        }
 
-
+        //open = findViewById(R.id.button1);
+        //open.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+            //public void onClick(View v) {
+              //  Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                //startActivity(intent);
+            //}
+        //});
     }
     public void onButtonShowPopupWindowClick(View view) {
 
@@ -93,5 +102,14 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        open = findViewById(R.id.button1);
+        open.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
     }
-    }
+}
