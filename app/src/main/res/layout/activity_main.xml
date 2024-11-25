@@ -9,12 +9,15 @@
     android:background="@drawable/pageone"
     tools:context=".MainActivity">
 
+    <!-- -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="android:textColor=&quot;@color/white&quot;" />
+        android:text="android:textColor=&quot;@color/white&quot;"
+        />
 
+    <!-- -->
     <TextView
         android:id="@+id/date_text"
         android:layout_width="wrap_content"
@@ -27,6 +30,7 @@
         android:textStyle="bold"
         />
 
+    <!-- -->
     <ImageView
         android:id="@+id/year"
         android:layout_width="375dp"
@@ -36,6 +40,7 @@
         android:background="@drawable/year"
         />
 
+    <!-- -->
     <ImageView
         android:id="@+id/leapyear"
         android:layout_width="375dp"
@@ -56,12 +61,14 @@
             /
        -->
 
+    <!-- -->
     <ImageView
         android:id="@+id/daymarker"
         android:layout_width="375dp"
         android:layout_height="375dp"
         android:background="@drawable/daymarker" />
 
+    <!-- -->
     <ImageView
         android:id="@+id/monday"
         android:layout_width="290dp"
@@ -71,6 +78,7 @@
         android:background="@drawable/monday"
         />
 
+    <!-- -->
     <ImageView
         android:id="@+id/tuesday"
         android:layout_width="290dp"
@@ -80,6 +88,7 @@
         android:background="@drawable/tuesday"
         />
 
+    <!-- -->
     <ImageView
         android:id="@+id/wednesday"
         android:layout_width="290dp"
@@ -89,6 +98,7 @@
         android:background="@drawable/wednesday"
         />
 
+    <!-- -->
     <ImageView
         android:id="@+id/thursday"
         android:layout_width="290dp"
