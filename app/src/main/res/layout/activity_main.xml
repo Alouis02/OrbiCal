@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,39 +9,49 @@
     android:background="@drawable/pageone"
     tools:context=".MainActivity">
 
+    <!--This shows the date on the app.-->
     <TextView
         android:id="@+id/date_text"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_below="@id/digital_Clock"
-        android:layout_centerHorizontal="true"
         android:text="Date"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/digital_Clock"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
+    <!--This XML displays the Image view of the year.-->
     <ImageView
         android:id="@+id/year"
         android:layout_width="375dp"
         android:layout_height="375dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/year" />
+        android:background="@drawable/year"
+        />
 
+    <!--This XML displays the Image view of every leap year.-->
     <ImageView
         android:id="@+id/leapyear"
         android:layout_width="375dp"
         android:layout_height="375dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/leapyear" />
+        android:background="@drawable/leapyear"
+        />
 
+    <!--This XML displays the Image view of the day marker
+    which marks the day we're currently in.-->
     <ImageView
         android:id="@+id/daymarker"
         android:layout_width="375dp"
         android:layout_height="375dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/daymarker" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/daymarker"
+        />
 
     <!--
         <ImageView
@@ -53,14 +64,17 @@
             /
        -->
 
+    <!--This XML displays the Image view of Monday.-->
     <ImageView
         android:id="@+id/monday"
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/monday" />
+        android:background="@drawable/monday"
+        />
 
+    <!--This XML displays the Image view of Tuesday.-->
     <ImageView
         android:id="@+id/tuesday"
         android:layout_width="290dp"
@@ -70,6 +84,7 @@
         android:background="@drawable/tuesday"
         />
 
+    <!--This XML displays the Image view of Wednesday.-->
     <ImageView
         android:id="@+id/wednesday"
         android:layout_width="290dp"
@@ -79,6 +94,7 @@
         android:background="@drawable/wednesday"
         />
 
+    <!--This XML displays the Image view of Thursday.-->
     <ImageView
         android:id="@+id/thursday"
         android:layout_width="290dp"
@@ -88,6 +104,7 @@
         android:background="@drawable/thursday"
         />
 
+    <!--This XML displays the Image view of Friday.-->
     <ImageView
         android:id="@+id/friday"
         android:layout_width="290dp"
@@ -97,6 +114,7 @@
         android:background="@drawable/friday"
         />
 
+    <!--This XML displays the Image view of Saturday.-->
     <ImageView
         android:id="@+id/saturday"
         android:layout_width="290dp"
@@ -106,6 +124,7 @@
         android:background="@drawable/saturday"
         />
 
+    <!--This XML displays the Image view of Sunday.-->
     <ImageView
         android:id="@+id/sunday"
         android:layout_width="290dp"
@@ -115,14 +134,17 @@
         android:background="@drawable/sunday"
         />
 
+    <!--This XML displays the Image view of DayNight-->
     <ImageView
         android:id="@+id/daynnight"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/daynnightclock" />
+        android:background="@drawable/daynnightclock"
+        />
 
+    <!--This XML shows the Digital clock on the Home Page.-->
     <DigitalClock
         android:id="@+id/digital_Clock"
         android:layout_width="wrap_content"
@@ -131,22 +153,107 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-
         />
 
+    <!--This button lets the user add an events or appointments.-->
     <Button
         android:id="@+id/button1"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_margin="10dp"
         android:background="@drawable/add"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        />
 
+    <!--This button lets user go to the pop up window for
+    their events or appointments that takes place on Mondays.-->
     <Button
-        android:id="@+id/button_show_popup"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="200dp"
-        android:text="Show Popup" />
+        android:id="@+id/mday"
+        android:layout_width="50dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="238dp"
+        android:layout_marginTop="245dp"
+        android:alpha="0.12"
+        android:text="Button"
+        android:textColor="#00FFFF00"
+        />
+
+    <!--This button lets user go to the pop up window for
+    their events or appointments that takes place on Tuesdays.-->
+    <Button
+        android:id="@+id/tday"
+        android:layout_width="25dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="310dp"
+        android:layout_marginTop="320dp"
+        android:alpha="0.12"
+        android:text="Button"
+        android:textColor="#00FFFF00"
+        />
+
+    <!--This button lets user go to the pop up window for
+    their events or appointments that takes place on Wednesdays.-->
+    <Button
+        android:id="@+id/wday"
+        android:layout_width="30dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="288dp"
+        android:layout_marginTop="415dp"
+        android:alpha="0.12"
+        android:text="Button"
+        android:textColor="#00FFFF00"
+        />
+
+    <!--This button lets user go to the pop up window for
+    their events or appointments that takes place on Thursdays.-->
+    <Button
+        android:id="@+id/thday"
+        android:layout_width="50dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="182dp"
+        android:layout_marginTop="468dp"
+        android:alpha="0.12"
+        android:text="Button"
+        android:textColor="#00FFFF00"
+        />
+
+    <!--This button lets user go to the pop up window for
+    their events or appointments that takes place on Fridays.-->
+    <Button
+        android:id="@+id/fday"
+        android:layout_width="30dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="415dp"
+        android:alpha="0.12"
+        android:text="Button"
+        android:textColor="#00FFFF00"
+        />
+
+    <!--This button lets user go to the pop up window for
+    their events or appointments that takes place on Saturdays.-->
+    <Button
+        android:id="@+id/stday"
+        android:layout_width="25dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="320dp"
+        android:alpha="0.12"
+        android:text="Button"
+        android:textColor="#00FFFF00"
+        />
+
+    <!--This button lets user go to the pop up window for
+    their events or appointments that takes place on Sundays.-->
+    <Button
+        android:id="@+id/sday"
+        android:layout_width="50dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="245dp"
+        android:alpha="0.12"
+        android:text="Button"
+        android:textColor="#00FFFF00"
+        />
 
 </RelativeLayout>
