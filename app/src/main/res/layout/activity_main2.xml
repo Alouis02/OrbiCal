@@ -9,7 +9,8 @@
     android:background="@drawable/pagetwo"
     tools:context=".MainActivity2">
 
-    <!--This shows the date on the app on the Edit page similar to the Home page.-->
+    <!--This shows the date on the app on the
+    Edit page similar to the Home page.-->
     <TextView
         android:id="@+id/date_text2"
         android:layout_width="wrap_content"
@@ -22,7 +23,8 @@
         android:textStyle="bold"
         />
 
-    <!--This XML shows the Digital clock on the Edit page similar to the Home Page.-->
+    <!--This XML shows the Digital clock on the
+    Edit page similar to the Home Page.-->
     <DigitalClock
         android:id="@+id/digital_Clock"
         android:layout_width="wrap_content"
