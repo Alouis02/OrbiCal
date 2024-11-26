@@ -89,8 +89,7 @@ public class MainActivity extends AppCompatActivity {
             imageView.animate().rotation(0).rotation(0.9836065573770F * dayOfYear).start();
         } else {
             imageView = findViewById(R.id.daymarker);
-            //rotation degree == 360/365 multiplied by the day of the year when not a leap year
-            imageView.animate().rotation(0).rotation(0.9863013698630F * dayOfYear).start();
+            imageView.animate().rotation(0).rotation(0.9863013698630F * dayOfYear).start(); //rotation degree == 360/365 multiplied by the day of the year when not a leap year
         }
 
         // Initialize the button and set an OnClickListener
@@ -101,16 +100,6 @@ public class MainActivity extends AppCompatActivity {
                 // Create an Intent to start MainActivity2 when the button is clicked
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 startActivity(intent);
-            }
-        });
-
-        // Initialize the popup button and set an OnClickListener
-        //showPopupButton = findViewById(R.id.button_show_popup);
-        showPopupButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Programmatically calling the popup method
-                onButtonShowPopupWindowClick(v); // Passing the current view (v)
             }
         });
     }
