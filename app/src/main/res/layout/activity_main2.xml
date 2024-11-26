@@ -9,6 +9,8 @@
     android:background="@drawable/pagetwo"
     tools:context=".MainActivity2">
 
+    <!--This shows the date on the app on the
+    Edit page similar to the Home page.-->
     <TextView
         android:id="@+id/date_text2"
         android:layout_width="wrap_content"
@@ -21,6 +23,8 @@
         android:textStyle="bold"
         />
 
+    <!--This XML shows the Digital clock on the
+    Edit page similar to the Home Page.-->
     <DigitalClock
         android:id="@+id/digital_Clock"
         android:layout_width="wrap_content"
@@ -31,6 +35,7 @@
         android:textStyle="bold"
         />
 
+    <!--This button lets the user go back to the Home Page-->
     <Button
         android:id="@+id/button2"
         android:layout_width="48dp"
@@ -38,5 +43,16 @@
         android:layout_margin="10dp"
         android:background="@drawable/back"
         android:textColor="@color/white" />
+
+    <!--This button lets the user add an event-->
+    <Button
+        android:id="@+id/eventbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Event"
+        android:layout_centerInParent="true"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
 </RelativeLayout>
