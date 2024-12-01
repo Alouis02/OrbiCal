@@ -10,20 +10,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.text.DateFormat;
 import java.time.Year;
 import java.util.Calendar;
-// Additional imports for popup window
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
+import java.util.HashMap;
 
-// Main class for the activity
 public class MainActivity extends AppCompatActivity {
 
     // Declare the buttons and image view
     private Button open;
-    private Button showPopupButton;
     private ImageView imageView;
+
+    // Static HashMap to store events for each day
+    public static HashMap<Integer, String> eventsMap = new HashMap<>();
+    public static HashMap<Integer, String> timeMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.saturday);
         imageView = findViewById(R.id.sunday);
         Calendar cal = Calendar.getInstance();
+
+        int currentDay = cal.get(Calendar.DAY_OF_WEEK);
+        TextView eventTextView = findViewById(R.id.event_text);
+        eventTextView.setText(eventsMap.getOrDefault(currentDay, "No Events"));
+
+        TextView timeTextView = findViewById(R.id.time_text);
+        timeTextView.setText(timeMap.getOrDefault(currentDay, "No Time Set"));
 
         // Check the day of the week and set the corresponding image resource
         if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
@@ -100,32 +104,6 @@ public class MainActivity extends AppCompatActivity {
                 // Create an Intent to start MainActivity2 when the button is clicked
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 startActivity(intent);
-            }
-        });
-    }
-
-    // Method to show the popup window
-    public void onButtonShowPopupWindowClick(View view) {
-        // Inflate the layout of the popup window
-        LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.popup_window, null);
-
-        // Create the popup window
-        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-        boolean focusable = true; // lets taps outside the popup also dismiss it
-        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-
-        // Show the popup window
-        // which view you pass in doesn't matter, it is only used for the window token
-        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-
-        // Dismiss the popup window when touched
-        popupView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                popupWindow.dismiss();
-                return true;
             }
         });
     }
