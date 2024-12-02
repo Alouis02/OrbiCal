@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pageone"
-    android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:gravity="center">
 
     <!-- This shows the date on the app. -->
     <TextView
@@ -18,9 +19,9 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/digital_Clock"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/digital_Clock" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Event text -->
 
@@ -63,10 +64,10 @@
         android:layout_width="375dp"
         android:layout_height="375dp"
         android:background="@drawable/year"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <!-- This XML displays the Image view of every leap year. -->
     <ImageView
@@ -74,10 +75,10 @@
         android:layout_width="375dp"
         android:layout_height="375dp"
         android:background="@drawable/leapyear"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <!-- This XML displays the Image view of the day marker which marks the day we're currently in. -->
     <ImageView
@@ -85,10 +86,10 @@
         android:layout_width="375dp"
         android:layout_height="375dp"
         android:background="@drawable/daymarker"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <!-- This XML displays the Image view of Monday. -->
     <ImageView
@@ -96,10 +97,10 @@
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:background="@drawable/monday"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <!-- This XML displays the Image view of Tuesday. -->
     <ImageView
@@ -107,10 +108,10 @@
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:background="@drawable/tuesday"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <!-- This XML displays the Image view of Wednesday. -->
     <ImageView
@@ -118,10 +119,10 @@
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:background="@drawable/wednesday"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <!-- This XML displays the Image view of Thursday. -->
     <ImageView
@@ -129,10 +130,10 @@
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:background="@drawable/thursday"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <!-- This XML displays the Image view of Friday. -->
     <ImageView
@@ -140,10 +141,10 @@
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:background="@drawable/friday"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <!-- This XML displays the Image view of Saturday. -->
     <ImageView
@@ -151,10 +152,10 @@
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:background="@drawable/saturday"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <!-- This XML displays the Image view of Sunday. -->
     <ImageView
@@ -162,10 +163,10 @@
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:background="@drawable/sunday"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <!-- This XML displays the Image view of DayNight -->
     <ImageView
@@ -173,20 +174,13 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:background="@drawable/daynnightclock"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 
     <!--This XML displays the Image view of secondhand-->
-
-    <!--This XML displays the Image view of minutehand-->
-
-    <!--This XML displays the Image view of hourhand-->
-
-
-    <!-- This XML shows the Digital clock on the Home Page. -->
-
     <ImageView
         android:id="@+id/secondhand"
         android:layout_width="150dp"
@@ -196,12 +190,12 @@
         android:background="@drawable/secondhand"
         android:contentDescription="The second hand of the clock."
         tools:ignore="HardcodedText"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-         />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
+    <!--This XML displays the Image view of minutehand-->
     <ImageView
         android:id="@+id/minutehand"
         android:layout_width="150dp"
@@ -211,12 +205,12 @@
         android:background="@drawable/minutehand"
         android:contentDescription="The minute hand of the clock."
         tools:ignore="HardcodedText"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-         />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
+    <!--This XML displays the Image view of hourhand-->
     <ImageView
         android:id="@+id/hourhand"
         android:layout_width="150dp"
@@ -226,12 +220,13 @@
         android:background="@drawable/hourhand"
         android:contentDescription="The hour hand of the clock."
         tools:ignore="HardcodedText"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-         />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
+
+    <!-- This XML shows the Digital clock on the Home Page. -->
     <DigitalClock
         android:id="@+id/digital_Clock"
         android:layout_width="wrap_content"
@@ -239,9 +234,9 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
     <!-- This button lets user go to the pop up window for their events or appointments that takes place on Sundays. -->

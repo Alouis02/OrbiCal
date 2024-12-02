@@ -6,8 +6,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
     android:background="@drawable/pagetwo"
     tools:context=".MainActivity2">
 
@@ -21,10 +19,8 @@
         android:text="Date"
         android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:paddingBottom="16dp"
-
         />
 
     <!--This XML shows the Digital clock on the
@@ -35,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         />
 
@@ -58,38 +54,5 @@
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"/>
-
-    <EditText
-        android:id="@+id/event_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Event/Appointment"
-        android:textColorHint="#FFFFFF"
-        android:layout_marginTop="150dp"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#00A6FF"
-    />
-
-    <EditText
-        android:id="@+id/date_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Date (Ex. 01/01/01)"
-        android:textColorHint="#FFFFFF"
-        android:layout_marginTop="200dp"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#00A6FF"
-    />
-
-    <EditText
-        android:id="@+id/time_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Time (Ex. 5:30 AM/PM)"
-        android:textColorHint="#FFFFFF"
-        android:layout_marginTop="250dp"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#00A6FF"
-        />
 
 </RelativeLayout>

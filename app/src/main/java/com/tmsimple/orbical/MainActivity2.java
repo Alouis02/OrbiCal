@@ -4,13 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
+// Additional imports for Add Event
+import android.annotation.SuppressLint;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -18,10 +20,10 @@ public class MainActivity2 extends AppCompatActivity {
     // Variables for Button objects
     private Button open2;
     private Button mButton;
-    private EditText eventInput;
-    private EditText dateInput;
-    private EditText timeInput;
+    private Date mStartTime;
+    private Date mEndTime;
 
+    @SuppressLint("SimpleDateFormat")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Calls the super class's onCreate method to perform initial setup
@@ -47,44 +49,41 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
-        // Declaring and initializing the event button and input fields from the layout file
+        // Declaring and initializing the event button from the layout file
         mButton = findViewById(R.id.eventbutton);
-        eventInput = findViewById(R.id.event_input);
-        dateInput = findViewById(R.id.date_input);
-        timeInput = findViewById(R.id.time_input);
 
-        // When Button is clicked, add event, date, and time to the selected day
+        // Event start and end time with date
+        String startTime = "2022-02-1T09:00:00";
+        String endTime = "2022-02-1T12:00:00";
+
+        // Parsing the date and time
+        SimpleDateFormat mSimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        try {
+            mStartTime = mSimpleDateFormat.parse(startTime);
+            mEndTime = mSimpleDateFormat.parse(endTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        // When Button is clicked, Intent is started to create an event with the given time
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String event = eventInput.getText().toString();
-                int dateInt = Integer.parseInt(dateInput.getText().toString());
-                int timeInt = Integer.parseInt(timeInput.getText().toString());
-
-                if (!event.isEmpty() && dateInt > 0 && timeInt >= 0) {
-                    try {
-                        // Set calendar with the integer date and time
-                        Calendar cal = Calendar.getInstance();
-                        cal.set(Calendar.DAY_OF_MONTH, dateInt % 100);  // date is in DD format
-                        cal.set(Calendar.MONTH, (dateInt / 100) % 100 - 1);  // month is in MM format (0-based in Calendar)
-                        cal.set(Calendar.YEAR, dateInt / 10000);  // year is in YYYY format
-                        cal.set(Calendar.HOUR_OF_DAY, timeInt / 100);  // hour is in HH format (24-hour clock)
-                        cal.set(Calendar.MINUTE, timeInt % 100);  // minute is in MM format
-
-                        int selectedDay = cal.get(Calendar.DAY_OF_WEEK);
-
-                        // Add event, date, and time to the static HashMap in MainActivity
-                        MainActivity.eventsMap.put(selectedDay, event);
-                        MainActivity.timeMap.put(selectedDay, String.format("%02d:%02d", timeInt / 100, timeInt % 100));
-
-                        Toast.makeText(MainActivity2.this, "Event added: " + event + " on " + dateInt + " at " + timeInt, Toast.LENGTH_SHORT).show();
-                    } catch (Exception e) {
-                        Toast.makeText(MainActivity2.this, "Invalid date/time format.", Toast.LENGTH_SHORT).show();
-                    }
+                if (mStartTime != null && mEndTime != null) {
+                    Intent mIntent = new Intent(Intent.ACTION_EDIT);
+                    mIntent.setType("vnd.android.cursor.item/event");
+                    mIntent.putExtra("beginTime", mStartTime.getTime());
+                    mIntent.putExtra("time", true);
+                    mIntent.putExtra("rule", "FREQ=YEARLY");
+                    mIntent.putExtra("endTime", mEndTime.getTime());
+                    mIntent.putExtra("title", "Geeksforgeeks Event");
+                    startActivity(mIntent);
                 } else {
-                    Toast.makeText(MainActivity2.this, "Please enter a valid event, date, and time", Toast.LENGTH_SHORT).show();
+                    // Handle the case where mStartTime or mEndTime is null
+                    Toast.makeText(MainActivity2.this, "Invalid date/time format.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
     }
 }

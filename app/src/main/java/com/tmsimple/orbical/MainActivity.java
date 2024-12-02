@@ -11,14 +11,9 @@ import java.text.DateFormat;
 import java.time.Year;
 import java.util.Calendar;
 import java.util.HashMap;
-// Additional imports
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.view.animation.LinearInterpolator;
 import android.animation.ObjectAnimator;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -104,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             imageView.animate().rotation(0).rotation(0.9863013698630F * dayOfYear).start(); //rotation degree == 360/365 multiplied by the day of the year when not a leap year
         }
 
+
         /////Code for the hour, minute, and second hands
         Calendar timeOfDay = Calendar.getInstance();
         int dayHour = timeOfDay.get(Calendar.HOUR_OF_DAY);
@@ -139,6 +135,8 @@ public class MainActivity extends AppCompatActivity {
         animator.setInterpolator(new LinearInterpolator()); // Use LinearInterpolator for constant speed
         animator.setRepeatCount(ObjectAnimator.INFINITE); // Keep repeating indefinitely
         animator.start();
+
+
 
         // Initialize the button and set an OnClickListener
         open = findViewById(R.id.button1);
