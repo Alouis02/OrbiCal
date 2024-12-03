@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pageone"
+    tools:context=".MainActivity"
+    android:gravity="center"
+    >
+
+
+    <!-- This shows the date on the app. -->
+    <TextView
+        android:id="@+id/date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        android:text="Date"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/digital_Clock"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+    <!-- Event text -->
+
+    <TextView
+        android:id="@+id/event_text"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:padding="16dp"
+        android:text="No Events"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date_text"
+        tools:ignore="HardcodedText,TextContrastCheck" />
+
+    <!-- Time text -->
+
+    <TextView
+        android:id="@+id/time_text"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
+        android:padding="16dp"
+        android:text="No Events"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_text"
+        tools:ignore="HardcodedText" />
+
+
+        <!-- This XML displays the Image view of every leap year. -->
+    <ImageView
+        android:id="@+id/leapyear"
+        android:layout_width="355dp"
+        android:layout_height="355dp"
+        android:background="@drawable/leapyear"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <!-- This XML displays the Image view of the day marker which marks the day we're currently in. -->
+    <ImageView
+        android:id="@+id/daymarker"
+        android:layout_width="355dp"
+        android:layout_height="355dp"
+        android:background="@drawable/daymarker"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <!-- This XML displays the Image view of Monday. -->
+    <ImageView
+        android:id="@+id/monday"
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:background="@drawable/monday"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <!-- This XML displays the Image view of Tuesday. -->
+    <ImageView
+        android:id="@+id/tuesday"
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:background="@drawable/tuesday"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <!-- This XML displays the Image view of Wednesday. -->
+    <ImageView
+        android:id="@+id/wednesday"
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:background="@drawable/wednesday"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <!-- This XML displays the Image view of Thursday. -->
+    <ImageView
+        android:id="@+id/thursday"
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:background="@drawable/thursday"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <!-- This XML displays the Image view of Friday. -->
+    <ImageView
+        android:id="@+id/friday"
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:background="@drawable/friday"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <!-- This XML displays the Image view of Saturday. -->
+    <ImageView
+        android:id="@+id/saturday"
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:background="@drawable/saturday"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <!-- This XML displays the Image view of Sunday. -->
+    <ImageView
+        android:id="@+id/sunday"
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:background="@drawable/sunday"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <!-- This XML displays the Image view of DayNight -->
+    <ImageView
+        android:id="@+id/daynnight"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/daynnightclock"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="ContentDescription" />
+
+
+    <!--This XML displays the Image view of secondhand-->
+    <ImageView
+        android:id="@+id/secondhand"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/secondhand"
+        android:contentDescription="The second hand of the clock."
+        tools:ignore="HardcodedText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!--This XML displays the Image view of minutehand-->
+    <ImageView
+        android:id="@+id/minutehand"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/minutehand"
+        android:contentDescription="The minute hand of the clock."
+        tools:ignore="HardcodedText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!--This XML displays the Image view of hourhand-->
+    <ImageView
+        android:id="@+id/hourhand"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/hourhand"
+        android:contentDescription="The hour hand of the clock."
+        tools:ignore="HardcodedText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    <!-- This XML shows the Digital clock on the Home Page. -->
+    <DigitalClock
+        android:id="@+id/digital_Clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!-- This button lets user go to the pop up window for their events or appointments that takes place on Sundays. -->
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/add"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/Sday"
+        android:layout_width="50dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.12"
+        android:text="Button"
+        android:textColor="#00FFFF00"
+        app:layout_constraintBottom_toBottomOf="@id/sunday"
+        app:layout_constraintEnd_toEndOf="@id/sunday"
+        app:layout_constraintHorizontal_bias="0.237"
+        app:layout_constraintStart_toStartOf="@id/sunday"
+        app:layout_constraintTop_toTopOf="@id/sunday"
+        app:layout_constraintVertical_bias="0.004"
+        tools:ignore="HardcodedText,TextContrastCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/Mday"
+        android:layout_width="50dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.12"
+        android:text="Button"
+        android:textColor="#00FFFF00"
+        app:layout_constraintBottom_toBottomOf="@id/sunday"
+        app:layout_constraintEnd_toEndOf="@id/sunday"
+        app:layout_constraintHorizontal_bias="0.758"
+        app:layout_constraintStart_toStartOf="@id/sunday"
+        app:layout_constraintTop_toTopOf="@id/sunday"
+        app:layout_constraintVertical_bias="0.004"
+        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/Tday"
+        android:layout_width="31dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.12"
+        android:text="Button"
+        android:textColor="#00FFFF00"
+        app:layout_constraintBottom_toBottomOf="@id/sunday"
+        app:layout_constraintEnd_toEndOf="@id/sunday"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="@id/sunday"
+        app:layout_constraintTop_toTopOf="@id/sunday"
+        app:layout_constraintVertical_bias="0.355"
+        tools:ignore="HardcodedText,TextSizeCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/Wday"
+        android:layout_width="56dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.12"
+        android:text="Button"
+        android:textColor="#00FFFF00"
+        app:layout_constraintBottom_toBottomOf="@id/sunday"
+        app:layout_constraintEnd_toEndOf="@id/sunday"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="@id/sunday"
+        app:layout_constraintTop_toTopOf="@id/sunday"
+        app:layout_constraintVertical_bias="0.761"
+        tools:ignore="HardcodedText,TouchTargetSizeCheck,TextSizeCheck" />
+
+    <Button
+        android:id="@+id/THday"
+        android:layout_width="73dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.12"
+        android:text="Button"
+        android:textColor="#00FFFF00"
+        app:layout_constraintBottom_toBottomOf="@id/sunday"
+        app:layout_constraintEnd_toEndOf="@id/sunday"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@id/sunday"
+        app:layout_constraintTop_toTopOf="@id/sunday"
+        app:layout_constraintVertical_bias="0.933"
+        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/Fday"
+        android:layout_width="53dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.12"
+        android:text="Button"
+        android:textColor="#00FFFF00"
+        app:layout_constraintBottom_toBottomOf="@id/sunday"
+        app:layout_constraintEnd_toEndOf="@id/sunday"
+        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintStart_toStartOf="@id/sunday"
+        app:layout_constraintTop_toTopOf="@id/sunday"
+        app:layout_constraintVertical_bias="0.771"
+        tools:ignore="HardcodedText,TextSizeCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/STday"
+        android:layout_width="30dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.12"
+        android:text="Button"
+        android:textColor="#00FFFF00"
+        app:layout_constraintBottom_toBottomOf="@id/sunday"
+        app:layout_constraintEnd_toEndOf="@id/sunday"
+        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintStart_toStartOf="@id/sunday"
+        app:layout_constraintTop_toTopOf="@id/sunday"
+        app:layout_constraintVertical_bias="0.347"
+        tools:ignore="HardcodedText,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
