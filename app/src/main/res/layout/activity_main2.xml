@@ -52,10 +52,10 @@
         android:id="@+id/eventbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/time_input"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="140dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="137dp"
+        android:layout_marginTop="455dp"
         android:text="Add Event"
         android:textColor="#000000"
         android:textSize="20sp"
@@ -82,13 +82,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/date_text2"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="109dp"
-        android:layout_marginEnd="3dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="6dp"
         android:backgroundTint="#00A6FF"
         android:hint="Enter Event/Appointment"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
-
 
     <!--This EditText lets the user add the time of their events-->
     <EditText
@@ -98,7 +97,7 @@
         android:layout_below="@+id/date_input"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="-4dp"
+        android:layout_marginEnd="6dp"
         android:backgroundTint="#00A6FF"
         android:hint="Enter Time (Ex. 5:30 AM/PM)"
         android:textColor="#FFFFFF"
