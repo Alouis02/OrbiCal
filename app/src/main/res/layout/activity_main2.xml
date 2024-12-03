@@ -16,12 +16,11 @@
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_below="@id/digital_Clock"
-        android:text="Date"
         android:layout_centerHorizontal="true"
+        android:text="Date"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <!--This XML shows the Digital clock on the
     Edit page similar to the Home Page.-->
@@ -49,46 +48,62 @@
         android:textColor="@color/white" />
 
     <!--This button lets the user add an event-->
+
+    <!--This EditText lets the user add the title of their events-->
+
+    <!--This EditText lets the user add the date of their events-->
+
+    <!--This EditText lets the user add the time of their events-->
+
     <Button
         android:id="@+id/eventbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/time_input"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="107dp"
+        android:layout_marginEnd="139dp"
         android:text="Add Event"
-        android:layout_centerInParent="true"
         android:textColor="#000000"
         android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
-    <!--This EditText lets the user add the title of their events-->
-    <EditText
-        android:id="@+id/event_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Event/Appointment"
-        android:textColorHint="#FFFFFF"
-        android:layout_marginTop="150dp"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#00A6FF" />
-
-    <!--This EditText lets the user add the date of their events-->
     <EditText
         android:id="@+id/date_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/event_input"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="6dp"
+        android:backgroundTint="#00A6FF"
         android:hint="Enter Date (Ex. 01/01/01)"
-        android:textColorHint="#FFFFFF"
-        android:layout_marginTop="200dp"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#00A6FF" />
+        android:textColorHint="#FFFFFF" />
 
-    <!--This EditText lets the user add the time of their events-->
+    <EditText
+        android:id="@+id/event_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date_text2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="109dp"
+        android:layout_marginEnd="3dp"
+        android:backgroundTint="#00A6FF"
+        android:hint="Enter Event/Appointment"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
+
     <EditText
         android:id="@+id/time_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/date_input"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="-4dp"
+        android:backgroundTint="#00A6FF"
         android:hint="Enter Time (Ex. 5:30 AM/PM)"
-        android:textColorHint="#FFFFFF"
-        android:layout_marginTop="250dp"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#00A6FF" />
+        android:textColorHint="#FFFFFF" />
 </RelativeLayout>
