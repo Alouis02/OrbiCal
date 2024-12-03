@@ -48,26 +48,20 @@
         android:textColor="@color/white" />
 
     <!--This button lets the user add an event-->
-
-    <!--This EditText lets the user add the title of their events-->
-
-    <!--This EditText lets the user add the date of their events-->
-
-    <!--This EditText lets the user add the time of their events-->
-
     <Button
         android:id="@+id/eventbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/time_input"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="107dp"
-        android:layout_marginEnd="139dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="140dp"
         android:text="Add Event"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold" />
 
+    <!--This EditText lets the user add the date of their events-->
     <EditText
         android:id="@+id/date_input"
         android:layout_width="match_parent"
@@ -81,6 +75,7 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
 
+    <!--This EditText lets the user add the title of their events-->
     <EditText
         android:id="@+id/event_input"
         android:layout_width="match_parent"
@@ -94,6 +89,8 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
 
+
+    <!--This EditText lets the user add the time of their events-->
     <EditText
         android:id="@+id/time_input"
         android:layout_width="match_parent"
