@@ -35,6 +35,16 @@ public class MainActivity extends AppCompatActivity {
         // Get current date and format it
         Calendar calendar = Calendar.getInstance();
         String dateFormat = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        boolean isLeapYear = Year.now().isLeap();
+
+        //set imageview based on isLeapYear
+
+        if (isLeapYear) {
+            setContentView(R.layout.activity_main_copy);
+        } else {
+            setContentView(R.layout.activity_main);
+        }
+
 
         // Set the formatted date to the TextView
         TextView dateTextView = findViewById(R.id.date_text);
@@ -77,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
         // Code for the day marker rotation
         Calendar days = Calendar.getInstance();
         int dayOfYear = days.get(Calendar.DAY_OF_YEAR);
-        boolean isLeapYear = Year.now().isLeap();
 
         // January 1st 12:00 AM
         Calendar newYear = Calendar.getInstance();

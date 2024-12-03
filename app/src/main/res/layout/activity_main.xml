@@ -8,7 +8,9 @@
     android:layout_height="match_parent"
     android:background="@drawable/pageone"
     tools:context=".MainActivity"
-    android:gravity="center">
+    android:gravity="center"
+    >
+
 
     <!-- This shows the date on the app. -->
     <TextView
@@ -18,16 +20,13 @@
         android:text="Date"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
+        android:layout_margin="10dp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/digital_Clock"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Event text -->
-
-    <!-- Time text -->
-
-    <!-- This XML displays the Image view of the year. -->
 
     <TextView
         android:id="@+id/event_text"
@@ -44,6 +43,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/date_text" />
 
+    <!-- Time text -->
+
     <TextView
         android:id="@+id/time_text"
         android:layout_width="match_parent"
@@ -59,32 +60,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/event_text" />
 
+
+    <ImageSwitcher
+        android:id="@+id/yearswitch"
+        android:layout_width="355dp"
+        android:layout_height="355dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        />
+
+    <!-- This XML displays the Image view of the year. -->
     <ImageView
         android:id="@+id/year"
-        android:layout_width="375dp"
-        android:layout_height="375dp"
+        android:layout_width="355dp"
+        android:layout_height="355dp"
         android:background="@drawable/year"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <!-- This XML displays the Image view of every leap year. -->
+        <!-- This XML displays the Image view of every leap year. -->
     <ImageView
         android:id="@+id/leapyear"
-        android:layout_width="375dp"
-        android:layout_height="375dp"
+        android:layout_width="355dp"
+        android:layout_height="355dp"
         android:background="@drawable/leapyear"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <!-- This XML displays the Image view of the day marker which marks the day we're currently in. -->
     <ImageView
         android:id="@+id/daymarker"
-        android:layout_width="375dp"
-        android:layout_height="375dp"
+        android:layout_width="355dp"
+        android:layout_height="355dp"
         android:background="@drawable/daymarker"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -232,7 +245,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -357,6 +370,5 @@
         app:layout_constraintStart_toStartOf="@id/sunday"
         app:layout_constraintTop_toTopOf="@id/sunday"
         app:layout_constraintVertical_bias="0.347" />
-    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
