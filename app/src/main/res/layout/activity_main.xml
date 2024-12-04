@@ -82,6 +82,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
+
     <!-- This XML displays the Image view of the day marker which marks the day we're currently in. -->
     <ImageView
         android:id="@+id/daymarker"
@@ -92,6 +93,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- This XML displays the Image view of the marker for events on the calendar -->
+    <ImageView
+        android:id="@+id/eventmarker"
+        android:layout_width="355dp"
+        android:layout_height="355dp"
+        android:background="@drawable/dayevent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
     <!-- This XML displays the Image view of Monday. -->
     <ImageView
