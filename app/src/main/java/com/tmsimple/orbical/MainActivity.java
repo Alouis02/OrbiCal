@@ -109,6 +109,28 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+
+        // Code for the event marker rotation
+
+/////////// !!! Need to access events and then use this code below to place them on the clock !!!
+
+        // Check if it's the new year and set the image rotation accordingly
+        if (Calendar.getInstance().compareTo(newYear) == 0) {
+            imageView = findViewById(R.id.eventmarker);
+            imageView.animate().rotation(0).rotation(-0.75f).start();
+        } else if (isLeapYear) {
+            imageView = findViewById(R.id.eventmarker);
+            imageView.animate().rotation(0).rotation((0.9836065573770F * dayOfYear)-0.75f).start();
+        } else {
+            imageView = findViewById(R.id.eventmarker);
+            imageView.animate().rotation(0).rotation((0.9863013698630F * dayOfYear)-0.75f).start(); //rotation degree == 360/365 multiplied by the day of the year when not a leap year
+        }
+
+
+
+
+
+
         /////Code for the hour, minute, and second hands
         Calendar timeOfDay = Calendar.getInstance();
         int dayHour = timeOfDay.get(Calendar.HOUR_OF_DAY);
