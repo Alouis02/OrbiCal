@@ -108,30 +108,7 @@ public class MainActivity extends AppCompatActivity {
             imageView.animate().rotation(0).rotation(0.9863013698630F * dayOfYear).start(); //rotation degree == 360/365 multiplied by the day of the year when not a leap year
         }
 
-
-
-        // Code for the event marker rotation
-
-/////////// !!! Need to access events and then use this code below to place them on the clock !!!
-
-        // Check if it's the new year and set the image rotation accordingly
-        if (Calendar.getInstance().compareTo(newYear) == 0) {
-            imageView = findViewById(R.id.eventmarker);
-            imageView.animate().rotation(0).rotation(-0.75f).start();
-        } else if (isLeapYear) {
-            imageView = findViewById(R.id.eventmarker);
-            imageView.animate().rotation(0).rotation((0.9836065573770F * dayOfYear)-0.75f).start();
-        } else {
-            imageView = findViewById(R.id.eventmarker);
-            imageView.animate().rotation(0).rotation((0.9863013698630F * dayOfYear)-0.75f).start(); //rotation degree == 360/365 multiplied by the day of the year when not a leap year
-        }
-
-
-
-
-
-
-        /////Code for the hour, minute, and second hands
+        //Code for the hour, minute, and second hands
         Calendar timeOfDay = Calendar.getInstance();
         int dayHour = timeOfDay.get(Calendar.HOUR_OF_DAY);
         int hourMin = timeOfDay.get(Calendar.MINUTE);
@@ -157,7 +134,6 @@ public class MainActivity extends AppCompatActivity {
         animatorMin.setRepeatCount(ObjectAnimator.INFINITE); // Keep repeating indefinitely
         animatorMin.start();
 
-
         imageView = findViewById(R.id.secondhand);
         imageView.animate().rotation(0).rotation(0).start();
         // Create an ObjectAnimator for rotation of secondhand
@@ -166,8 +142,6 @@ public class MainActivity extends AppCompatActivity {
         animator.setInterpolator(new LinearInterpolator()); // Use LinearInterpolator for constant speed
         animator.setRepeatCount(ObjectAnimator.INFINITE); // Keep repeating indefinitely
         animator.start();
-
-
 
         // Initialize the button and set an OnClickListener
         open = findViewById(R.id.button1);
