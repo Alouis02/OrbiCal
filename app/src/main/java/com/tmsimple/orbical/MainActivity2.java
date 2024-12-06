@@ -18,6 +18,7 @@ public class MainActivity2 extends AppCompatActivity {
     private EditText eventInput;
     private EditText dateInput;
     private EditText timeInput;
+    private EditText descriptionInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,8 @@ public class MainActivity2 extends AppCompatActivity {
         eventInput = findViewById(R.id.event_input);
         dateInput = findViewById(R.id.date_input);
         timeInput = findViewById(R.id.time_input);
-
+        descriptionInput = findViewById(R.id.description_input);
+        /*
         eventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +62,6 @@ public class MainActivity2 extends AppCompatActivity {
                     Toast.makeText(MainActivity2.this, "Please enter event, date, and time", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
     }
 }

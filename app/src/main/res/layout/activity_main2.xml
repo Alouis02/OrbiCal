@@ -11,6 +11,9 @@
 
     <!--This shows the date on the app on the
     Edit page similar to the Home page.-->
+
+
+
     <TextView
         android:id="@+id/date_text2"
         android:layout_width="wrap_content"
@@ -48,58 +51,76 @@
         android:textColor="@color/white" />
 
     <!--This button lets the user add an event-->
+
+    <!--This EditText lets the user add the date of their events-->
+
+    <!--This EditText lets the user add the title of their events-->
+
+    <!--This EditText lets the user add the time of their events-->
+
     <Button
         android:id="@+id/eventbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="138dp"
-        android:layout_marginTop="455dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="507dp"
         android:text="Add Event"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <!--This EditText lets the user add the date of their events-->
     <EditText
         android:id="@+id/date_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/event_input"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="6dp"
+        android:layout_marginTop="207dp"
+        android:layout_marginEnd="3dp"
         android:backgroundTint="#00A6FF"
-        android:hint="Enter Date (Ex. 01/01/01)"
+        android:hint="Enter Date (Ex. 2024-11-01)"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
 
-    <!--This EditText lets the user add the title of their events-->
     <EditText
         android:id="@+id/event_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/date_text2"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="110dp"
-        android:layout_marginEnd="6dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="4dp"
         android:backgroundTint="#00A6FF"
-        android:hint="Enter Event/Appointment"
+        android:hint="Enter Event Title"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
 
-    <!--This EditText lets the user add the time of their events-->
+    <EditText
+        android:id="@+id/description_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date_text2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="145dp"
+        android:layout_marginEnd="-5dp"
+        android:backgroundTint="#00A6FF"
+        android:hint="Enter Event Description"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
+
     <EditText
         android:id="@+id/time_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/date_input"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="6dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="3dp"
         android:backgroundTint="#00A6FF"
-        android:hint="Enter Time (Ex. 5:30 AM/PM)"
+        android:hint="Enter Time (Ex. 5:30)"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
+
 </RelativeLayout>
