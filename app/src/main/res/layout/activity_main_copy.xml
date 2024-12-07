@@ -89,7 +89,7 @@
         tools:ignore="ContentDescription" />
 
 
-    <!-- This XML displays the Image view of the marker for events on the calendar -->
+    <!-- This XML displays the Image view of the marker for events on the calendar
     <ImageView
         android:id="@+id/eventmarker"
         android:layout_width="355dp"
@@ -100,6 +100,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
+
+        -->
 
     <!-- This XML displays the Image view of Monday. -->
     <ImageView
