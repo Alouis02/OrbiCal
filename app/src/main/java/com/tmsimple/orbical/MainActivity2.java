@@ -1,6 +1,8 @@
 package com.tmsimple.orbical;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,11 +21,21 @@ public class MainActivity2 extends AppCompatActivity {
     private EditText dateInput;
     private EditText timeInput;
     private EditText descriptionInput;
+    private DatabaseManager dbManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        // Access the singleton DatabaseManager instance
+        dbManager = DatabaseManager.getInstance(this);
+        try {
+            dbManager.open();
+        } catch (Exception e) {
+            Toast.makeText(this, "Error opening database: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+
 
         Calendar calendar = Calendar.getInstance();
         String dateFormat = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
@@ -63,5 +75,20 @@ public class MainActivity2 extends AppCompatActivity {
                 }
             }
         });*/
+
+    } // This ends the onCreate method
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        dbManager.close(); // Close the database when the activity is destroyed
+    }
+    public void btnInsertEventPressed(View v) {
+        String title = eventInput.getText().toString();
+        String description = descriptionInput.getText().toString();
+        String date = dateInput.getText().toString();
+        String time = timeInput.getText().toString();
+
+        dbManager.insertEvent(title, description, date, time);
     }
 }

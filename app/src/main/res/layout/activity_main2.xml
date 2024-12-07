@@ -66,6 +66,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="140dp"
         android:layout_marginTop="507dp"
+        android:onClick="btnInsertEventPressed"
         android:text="Add Event"
         android:textColor="#000000"
         android:textSize="20sp"

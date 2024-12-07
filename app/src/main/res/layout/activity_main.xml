@@ -77,6 +77,8 @@
         android:layout_width="355dp"
         android:layout_height="355dp"
         android:background="@drawable/year"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,6 +90,8 @@
         android:layout_width="355dp"
         android:layout_height="355dp"
         android:background="@drawable/leapyear"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,6 +103,8 @@
         android:layout_width="355dp"
         android:layout_height="355dp"
         android:background="@drawable/daymarker"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,6 +116,8 @@
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:background="@drawable/monday"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -121,6 +129,8 @@
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:background="@drawable/tuesday"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -132,6 +142,8 @@
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:background="@drawable/wednesday"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -143,6 +155,8 @@
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:background="@drawable/thursday"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -154,6 +168,8 @@
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:background="@drawable/friday"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -165,6 +181,8 @@
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:background="@drawable/saturday"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -176,6 +194,8 @@
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:background="@drawable/sunday"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -187,6 +207,8 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:background="@drawable/daynnightclock"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -201,6 +223,8 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/secondhand"
+        android:clickable="false"
+        android:focusable="false"
         android:contentDescription="The second hand of the clock."
         tools:ignore="HardcodedText"
         app:layout_constraintTop_toTopOf="parent"
@@ -216,6 +240,8 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/minutehand"
+        android:clickable="false"
+        android:focusable="false"
         android:contentDescription="The minute hand of the clock."
         tools:ignore="HardcodedText"
         app:layout_constraintTop_toTopOf="parent"
@@ -231,6 +257,8 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/hourhand"
+        android:clickable="false"
+        android:focusable="false"
         android:contentDescription="The hour hand of the clock."
         tools:ignore="HardcodedText"
         app:layout_constraintTop_toTopOf="parent"
@@ -272,6 +300,7 @@
         android:layout_height="32dp"
         android:layout_marginTop="20dp"
         android:alpha="0.12"
+        android:onClick="onViewSundayClicked"
         android:text="Button"
         android:textColor="#00FFFF00"
         app:layout_constraintBottom_toBottomOf="@id/sunday"
@@ -279,7 +308,8 @@
         app:layout_constraintHorizontal_bias="0.237"
         app:layout_constraintStart_toStartOf="@id/sunday"
         app:layout_constraintTop_toTopOf="@id/sunday"
-        app:layout_constraintVertical_bias="0.004" />
+        app:layout_constraintVertical_bias="0.004"
+        android:elevation="15dp"/>
 
     <Button
         android:id="@+id/Mday"
@@ -287,6 +317,7 @@
         android:layout_height="32dp"
         android:layout_marginTop="20dp"
         android:alpha="0.12"
+        android:onClick="onViewMondayClicked"
         android:text="Button"
         android:textColor="#00FFFF00"
         app:layout_constraintBottom_toBottomOf="@id/sunday"
@@ -294,7 +325,8 @@
         app:layout_constraintHorizontal_bias="0.758"
         app:layout_constraintStart_toStartOf="@id/sunday"
         app:layout_constraintTop_toTopOf="@id/sunday"
-        app:layout_constraintVertical_bias="0.004" />
+        app:layout_constraintVertical_bias="0.004"
+        android:elevation="30dp"/>
 
     <Button
         android:id="@+id/Tday"
@@ -302,6 +334,7 @@
         android:layout_height="56dp"
         android:layout_marginTop="20dp"
         android:alpha="0.12"
+        android:onClick="onViewTuesdayClicked"
         android:text="Button"
         android:textColor="#00FFFF00"
         app:layout_constraintBottom_toBottomOf="@id/sunday"
@@ -309,7 +342,8 @@
         app:layout_constraintHorizontal_bias="0.945"
         app:layout_constraintStart_toStartOf="@id/sunday"
         app:layout_constraintTop_toTopOf="@id/sunday"
-        app:layout_constraintVertical_bias="0.355" />
+        app:layout_constraintVertical_bias="0.355"
+        android:elevation="15dp"/>
 
     <Button
         android:id="@+id/Wday"
@@ -317,6 +351,7 @@
         android:layout_height="46dp"
         android:layout_marginTop="20dp"
         android:alpha="0.12"
+        android:onClick="onViewWednesdayClicked"
         android:text="Button"
         android:textColor="#00FFFF00"
         app:layout_constraintBottom_toBottomOf="@id/sunday"
@@ -324,7 +359,8 @@
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="@id/sunday"
         app:layout_constraintTop_toTopOf="@id/sunday"
-        app:layout_constraintVertical_bias="0.761" />
+        app:layout_constraintVertical_bias="0.761"
+        android:elevation="15dp"/>
 
     <Button
         android:id="@+id/THday"
@@ -332,6 +368,7 @@
         android:layout_height="29dp"
         android:layout_marginTop="20dp"
         android:alpha="0.12"
+        android:onClick="onViewThursdayClicked"
         android:text="Button"
         android:textColor="#00FFFF00"
         app:layout_constraintBottom_toBottomOf="@id/sunday"
@@ -339,7 +376,8 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="@id/sunday"
         app:layout_constraintTop_toTopOf="@id/sunday"
-        app:layout_constraintVertical_bias="0.933" />
+        app:layout_constraintVertical_bias="0.933"
+        android:elevation="15dp"/>
 
     <Button
         android:id="@+id/Fday"
@@ -347,6 +385,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:alpha="0.12"
+        android:onClick="onViewFridayClicked"
         android:text="Button"
         android:textColor="#00FFFF00"
         app:layout_constraintBottom_toBottomOf="@id/sunday"
@@ -354,7 +393,8 @@
         app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="@id/sunday"
         app:layout_constraintTop_toTopOf="@id/sunday"
-        app:layout_constraintVertical_bias="0.771" />
+        app:layout_constraintVertical_bias="0.771"
+        android:elevation="15dp"/>
 
     <Button
         android:id="@+id/STday"
@@ -362,6 +402,7 @@
         android:layout_height="54dp"
         android:layout_marginTop="20dp"
         android:alpha="0.12"
+        android:onClick="onViewSaturdayClicked"
         android:text="Button"
         android:textColor="#00FFFF00"
         app:layout_constraintBottom_toBottomOf="@id/sunday"
@@ -369,6 +410,7 @@
         app:layout_constraintHorizontal_bias="0.035"
         app:layout_constraintStart_toStartOf="@id/sunday"
         app:layout_constraintTop_toTopOf="@id/sunday"
-        app:layout_constraintVertical_bias="0.347" />
+        app:layout_constraintVertical_bias="0.347"
+        android:elevation="15dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

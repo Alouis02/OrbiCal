@@ -1,18 +1,35 @@
 package com.tmsimple.orbical;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.text.DateFormat;
 import java.time.Year;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
+
 import android.view.animation.LinearInterpolator;
 import android.animation.ObjectAnimator;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     // Declare the buttons and image view
     private Button open;
     private ImageView imageView;
+    private DatabaseManager dbManager;
 
     // Static HashMap to store events for each day
     public static HashMap<Integer, String> eventsMap = new HashMap<>();
@@ -32,6 +50,19 @@ public class MainActivity extends AppCompatActivity {
         // Set the content view to activity_main layout
         setContentView(R.layout.activity_main);
 
+        //open the database
+        dbManager = DatabaseManager.getInstance(this);
+        try{
+            dbManager.open();
+            Log.d("DatabaseDebug", "Database opened sucessfully");
+        } catch (Exception e){
+            Toast.makeText(this, "Error opening database: "+ e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+        /*
+        // Insert an example event
+        dbManager.insertEvent("Meeting", "Team meeting", "2024-12-06", "10:00 AM");
+        Toast.makeText(this, "Event saved!", Toast.LENGTH_LONG).show();
+        */
         // Get current date and format it
         Calendar calendar = Calendar.getInstance();
         String dateFormat = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
@@ -153,5 +184,76 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+    }//End OnCreate
+
+    public void showEventsPopoup(View v, String dayOfWeek){
+        // Inflate the popup layout
+        LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.popup_events, null);
+
+        // Fetch events for the day of the week
+        Cursor cursor = dbManager.fetchEventsByDayOfWeek(dayOfWeek);
+        List<String> events = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+            do {
+                @SuppressLint("Range") String ID = cursor.getString(cursor.getColumnIndex(DatabaseHelper.EVENT_ID));
+                @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex(DatabaseHelper.EVENT_TITLE));
+                @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(DatabaseHelper.EVENT_TIME));
+                events.add(ID + " " + title + " at " + time);
+            } while (cursor.moveToNext());
+        }
+
+        // Set up RecyclerView
+        RecyclerView recyclerView = popupView.findViewById(R.id.recyclerViewEvents);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new EventAdapter(events));
+
+        // Create the PopupWindow
+        PopupWindow popupWindow = new PopupWindow(
+                popupView,
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                true
+        );
+
+        // Set a solid background for the popup
+        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+        popupWindow.setOutsideTouchable(false); // Disable dismissal by clicking outside
+        popupWindow.setFocusable(true);
+
+        // Add a click listener to dismiss the popup when clicked
+        popupView.setOnClickListener(view -> popupWindow.dismiss());
+
+        // Show the popup at the center of the screen
+        popupWindow.showAtLocation(v, Gravity.CENTER, 0, 0);
+    }
+    //This lets the app override the default onDestroy() method to explicity close the database
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        dbManager.close();
+    }
+    public void onViewSundayClicked(View v){
+        showEventsPopoup(v,"0");
+    }
+    public void onViewMondayClicked(View v){
+        showEventsPopoup(v, "1");
+    }
+    public void onViewTuesdayClicked(View v){
+        showEventsPopoup(v,"2");
+    }
+    public void onViewWednesdayClicked(View v){
+        showEventsPopoup(v, "3");
+    }
+    public void onViewThursdayClicked(View v){
+        showEventsPopoup(v,"4");
+    }
+    public void onViewFridayClicked(View v){
+        showEventsPopoup(v, "5");
+    }
+    public void onViewSaturdayClicked(View v){
+        showEventsPopoup(v,"6");
     }
 }

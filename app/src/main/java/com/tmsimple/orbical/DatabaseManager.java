@@ -8,23 +8,42 @@ import android.database.sqlite.SQLiteDatabase;
 import java.sql.SQLDataException;
 
 public class DatabaseManager {
+    private static DatabaseManager instance; // Singleton instance
     private DatabaseHelper dbHelper;
-    private Context context;
     private SQLiteDatabase database;
-    public DatabaseManager(Context ctx){
-        context = ctx;
+
+    // Private constructor to prevent direct instantiation
+    private DatabaseManager(Context context) {
+        dbHelper = new DatabaseHelper(context.getApplicationContext());
     }
 
-    public DatabaseManager open() throws SQLDataException{
-        dbHelper = new DatabaseHelper(context);
-        database = dbHelper.getWritableDatabase();
-        return this;
+    // Public method to get the singleton instance
+    public static synchronized DatabaseManager getInstance(Context context) {
+        if (instance == null) {
+            instance = new DatabaseManager(context);
+        }
+        return instance;
     }
 
-    public void close(){
-        dbHelper.close();
+    // Open the database connection
+    public void open() throws SQLDataException {
+        if (database == null || !database.isOpen()) {
+            try {
+                database = dbHelper.getWritableDatabase();
+            } catch (Exception e) {
+                throw new SQLDataException("Error opening database: " + e.getMessage());
+            }
+        }
     }
 
+    // Close the database connection
+    public void close() {
+        if (database != null && database.isOpen()) {
+            database.close();
+        }
+    }
+
+    // Insert an event into the database
     public void insertEvent(String title, String description, String date, String time) {
         ContentValues values = new ContentValues();
         values.put(DatabaseHelper.EVENT_TITLE, title);
@@ -34,8 +53,7 @@ public class DatabaseManager {
         database.insert(DatabaseHelper.EVENTS_TABLE, null, values);
     }
 
-    // Fetch Events by Day of Week
-    // by using %w we can reorganize the Event_date columm of the table to reorginized as integers from 0-6 where o is events on sunday, 1 is monday, etc.
+    // Fetch events by day of the week
     public Cursor fetchEventsByDayOfWeek(String dayOfWeek) {
         String query = "SELECT * FROM " + DatabaseHelper.EVENTS_TABLE +
                 " WHERE strftime('%w', " + DatabaseHelper.EVENT_DATE + ") = ?";
