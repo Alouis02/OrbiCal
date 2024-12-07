@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
         // Show the popup at the center of the screen
         popupWindow.showAtLocation(v, Gravity.CENTER, 0, 0);
     }
-    //This lets the app override the default onDestroy() method to explicity close the database
+    //This lets the app override the default onDestroy() method to explicitly close the database
     @Override
     protected void onDestroy(){
         super.onDestroy();
