@@ -64,6 +64,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         eventInput = findViewById(R.id.event_input);
         dateInput = findViewById(R.id.date_input);
+        IDInput = findViewById(R.id.ID_input);
         timeInput = findViewById(R.id.time_input);
         descriptionInput = findViewById(R.id.description_input);
 
@@ -156,12 +157,12 @@ public class MainActivity2 extends AppCompatActivity {
 
         dbManager.insertEvent(title, description, selectedDate, selectedTime);
     }
-    public void btnUpdateEventPressed(View v){
+    public void btnDeleteEventPressed(View v){
         int temp = Integer.parseInt(selectedID);
         dbManager.deleteEvent(temp);
     }
 
-    public void btnDeleteEventPressed(View v){
+    public void btnUpdateEventPressed(View v){
         int temp = Integer.parseInt(selectedID);
         String title = eventInput.getText().toString();
         String description = descriptionInput.getText().toString();
