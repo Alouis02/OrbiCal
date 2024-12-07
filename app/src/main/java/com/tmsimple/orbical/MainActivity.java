@@ -201,8 +201,9 @@ public class MainActivity extends AppCompatActivity {
                 @SuppressLint("Range") String ID = cursor.getString(cursor.getColumnIndex(DatabaseHelper.EVENT_ID));
                 @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex(DatabaseHelper.EVENT_TITLE));
                 @SuppressLint("Range") String time = cursor.getString(cursor.getColumnIndex(DatabaseHelper.EVENT_TIME));
+                @SuppressLint("Range") String date = cursor.getString(cursor.getColumnIndex(DatabaseHelper.EVENT_DATE));
                 @SuppressLint("Range") String description = cursor.getString(cursor.getColumnIndex(DatabaseHelper.EVENT_DESCRIPTION));
-                events.add(ID + " " + title + " at " + time + ": "+ description);
+                events.add(ID + " " + title +"on " + date +" at " + time + ": "+ description);
             } while (cursor.moveToNext());
         }
 
