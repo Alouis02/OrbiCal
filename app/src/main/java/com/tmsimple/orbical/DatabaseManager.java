@@ -59,4 +59,21 @@ public class DatabaseManager {
                 " WHERE strftime('%w', " + DatabaseHelper.EVENT_DATE + ") = ?";
         return database.rawQuery(query, new String[]{dayOfWeek});
     }
+    // Update an event's details based on the event ID
+    public void updateEvent(int eventId, String title, String description, String date, String time) {
+        ContentValues values = new ContentValues();
+        values.put(DatabaseHelper.EVENT_TITLE, title);
+        values.put(DatabaseHelper.EVENT_DESCRIPTION, description);
+        values.put(DatabaseHelper.EVENT_DATE, date);
+        values.put(DatabaseHelper.EVENT_TIME, time);
+
+        // Update the event in the database where the event ID matches
+        database.update(DatabaseHelper.EVENTS_TABLE, values, DatabaseHelper.EVENT_ID + " = ?", new String[]{String.valueOf(eventId)});
+    }
+
+    // Delete an event based on the event ID
+    public void deleteEvent(int eventId) {
+        // Delete the event from the database where the event ID matches
+        database.delete(DatabaseHelper.EVENTS_TABLE, DatabaseHelper.EVENT_ID + " = ?", new String[]{String.valueOf(eventId)});
+    }
 }

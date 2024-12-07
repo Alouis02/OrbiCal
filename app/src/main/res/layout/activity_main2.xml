@@ -13,6 +13,56 @@
     Edit page similar to the Home page.-->
 
 
+    <Button
+        android:id="@+id/removeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="233dp"
+        android:layout_marginTop="640dp"
+        android:onClick="btnInsertEventPressed"
+        android:text="Remove Event by ID"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="638dp"
+        android:onClick="btnInsertEventPressed"
+        android:text="Update Event by ID"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/date_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@id/digital_Clock"
+        android:layout_marginTop="485dp"
+        android:text="ID for updating/removing events"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/ID_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/event_input"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="7dp"
+        android:background="#00A6FF"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
 
     <TextView
         android:id="@+id/date_text2"
@@ -50,13 +100,8 @@
         android:background="@drawable/back"
         android:textColor="@color/white" />
 
-    <!--This button lets the user add an event-->
 
-    <!--This EditText lets the user add the date of their events-->
-
-    <!--This EditText lets the user add the title of their events-->
-
-    <!--This EditText lets the user add the time of their events-->
+    <!--spinners allow us to use dropdowns in place of text fields-->
 
     <Button
         android:id="@+id/eventbutton"
@@ -65,22 +110,22 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="507dp"
+        android:layout_marginTop="399dp"
         android:onClick="btnInsertEventPressed"
         android:text="Add Event"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <EditText
+    <Spinner
         android:id="@+id/date_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/event_input"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="207dp"
-        android:layout_marginEnd="3dp"
-        android:backgroundTint="#00A6FF"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="-1dp"
+        android:background="#00A6FF"
         android:hint="Enter Date (Ex. 2024-11-01)"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
@@ -91,8 +136,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/date_text2"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="3dp"
         android:backgroundTint="#00A6FF"
         android:hint="Enter Event Title"
         android:textColor="#FFFFFF"
@@ -104,22 +149,22 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/date_text2"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="145dp"
-        android:layout_marginEnd="-5dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="-4dp"
         android:backgroundTint="#00A6FF"
         android:hint="Enter Event Description"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
 
-    <EditText
+    <Spinner
         android:id="@+id/time_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/date_input"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="3dp"
-        android:backgroundTint="#00A6FF"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="1dp"
+        android:background="#00A6FF"
         android:hint="Enter Time (Ex. 5:30)"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
